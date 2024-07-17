@@ -7,18 +7,17 @@
 #   - Удалите одну из пар в словаре по существующему ключу из словаря my_dict и выведите значение из этой пары на экран.
 #   - Выведите на экран словарь my_dict.
 my_dict = {"Имя": "Иван", "Год рождения": 1994}
-
-print(my_dict["Имя"])
-print(my_dict.get("Фамилия", "Неизвестно"))
+print(f"Словарь: {my_dict}")
+print(f"Существующее значение: {my_dict["Имя"]}")
+print(f"Не существующее значение: {my_dict.get("Фамилия")}")
 
 my_dict["Фамилия"] = "Абрамович"
 my_dict["Пол"] = "Мужской"
-print(my_dict)
+print(f"Обновленный словарь: {my_dict}")
 
 d = my_dict.pop("Пол")
-print(d)
-print(my_dict)
-
+print(f"Удалить из словаря: {d}")
+print(my_dict, "\n")
 
 # 3. Работа с множествами:
 #   - Создайте переменную my_set и присвойте ей множество, состоящее из разных типов данных с повторяющимися значениями.
@@ -27,10 +26,10 @@ print(my_dict)
 #   - Удалите один любой элемент из множества my_set.
 #   - Выведите на экран измененное множество my_set.
 
-my_set = {"Apple", 1, 2, "Banana", 2, 1, "Coconut", "Dragon Fruit", (1, 2, 3)}
+my_set = {"Apple", 1, 2, "Banana", 2, 1.1, "Coconut", "Dragon Fruit", (1, 2, 3)}
 
-print(my_set)
+print(f"Множество: {my_set}")
 my_set.add("Grape")
 my_set.add(4)
 my_set.discard("Banana")
-print(my_set)
+print(f"Измененное множество:  {my_set}")
