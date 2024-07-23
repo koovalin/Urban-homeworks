@@ -16,15 +16,13 @@ primes = []
 not_primes = []
 
 for num in numbers:
+    if num in range(2): continue
     is_prime = True
     for i in range(2, num):
         if num % i == 0:
             is_prime = False
             break
-    if is_prime:
-        primes.append(num)
-    else:
-        not_primes.append(num)
-
+    primes.append(num) if is_prime else not_primes.append(num)
+        
 print("Primes:", primes)
 print("Not primes:", not_primes)
