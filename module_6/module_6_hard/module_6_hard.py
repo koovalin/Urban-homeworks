@@ -52,7 +52,7 @@ class Circle(Figure):
         return self.__radius()
 
     def get_square(self):
-        return math.pi * self.get_radius() ** 2
+        return math.pi * self.get_radius()**2
 
     def __about(self):
         return f"Круг с радиусом {self.get_radius()}, площадью {self.get_square()} см², цвет {self.get_color()}, заполнен: {self.filled}"
@@ -91,10 +91,15 @@ class Cube(Figure):
         return self.get_sides()[0]
 
     def get_square(self):
-        return self.__side_length() ** 2
+        return self.__side_length()**2
 
     def get_volume(self):
-        return self.__side_length() ** 3
+        return self.__side_length()**3
+
+    def set_sides(self, *new_sides):
+        if len(new_sides) == 1:
+            new_sides = [new_sides[0]] * self.sides_count
+            super().set_sides(*new_sides)
 
     def __about(self):
         return f"Куб с площадью {self.get_square()} см², объемом {self.get_volume()} см², заполнен: {self.filled}"
@@ -103,7 +108,8 @@ class Cube(Figure):
         return self.__about()
 
 
-def urban_homework_tests()
+if __name__ == "__main__":
+    # Urban tests
     circle1 = Circle((200, 200, 100), 10)  # (Цвет, стороны)
     cube1 = Cube((222, 35, 130), 6)
 
@@ -124,61 +130,3 @@ def urban_homework_tests()
 
     # Проверка объёма (куба):
     print(cube1.get_volume())
-
-def circle1_test():
-    # Тестирование классов
-    circle1 = Circle((200, 200, 100), 10)
-    print("\n------- ", circle1)
-    print(circle1.get_sides())
-    print(len(circle1))
-    print(circle1.get_color(), "Текущий цвет")
-
-    # Тест изменения
-    circle1.set_sides(15)
-    circle1.set_color(55, 66, 77)
-    print("\n------- Новые данные\n-------", circle1)
-    print(circle1.get_sides())
-    print(len(circle1))
-    print(circle1.get_color(), "Новый цвет")
-
-
-def cube_test():
-    cube1 = Cube((222, 35, 130), 6)
-    print("\n------- ", cube1)
-    print(cube1.get_sides())
-    print(len(cube1))
-    print(cube1.get_volume(), "Объем куба")
-    print(cube1.get_color(), "Текущий цвет")
-
-    # Тест изменения
-    cube1.set_sides(5)
-    cube1.set_color(250, 70, 15)
-    print("\n------- Новые данные\n------- ", cube1)
-    print(cube1.get_sides())
-    print(len(cube1))
-    print(cube1.get_volume(), "Объем куба")
-    print(cube1.get_color())
-
-
-def triangle_test():
-    triangle1 = Triangle((0, 0, 0), 3, 4, 5)
-    print("\n------- ", triangle1)
-    print(triangle1.get_sides())
-    print(len(triangle1))
-    print(triangle1.get_color())
-
-    triangle1.set_sides(4, 5, 6)
-    triangle1.set_color(10, 243, 128)
-    print("\n------- Новые данные\n------- ", triangle1)
-    print(triangle1.get_sides())
-    print(len(triangle1))
-    print(triangle1.get_color())
-
-
-if __name__ == '__main__':
-    circle1_test()
-    print()
-    cube_test()
-    print()
-    triangle_test()
-    print()
