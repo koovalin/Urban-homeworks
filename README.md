@@ -1,7 +1,5 @@
-# Репозиторий с домашними работами для *Urban University*.
-
 [![Urban](https://optim.tildacdn.com/tild6633-6535-4163-b666-383564623061/-/resize/192x/-/format/webp/Urban_University_log.png "Urban University")]()
-
+# Репозиторий с домашними работами для *Urban University*.
 ## Статус домашних заданий
 
 | Module                                                                                | Status      |
