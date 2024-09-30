@@ -15,15 +15,14 @@
 | [module_7](https://github.com/koovalin/Urban-homoworks/tree/main/module_7 "module_7") | <span style="color: green;">Ready</span>        |
 | [module_8](https://github.com/koovalin/Urban-homoworks/tree/main/module_8 "module_8") | <span style="color: green;">Ready</span>        |
 | [module_9](https://github.com/koovalin/Urban-homoworks/tree/main/module_9 "module_9") | <span style="color: orange;">In progress</span> |
-| [module_10]("module_10")                                                              | <span style="color: red;">Not ready</span>      |
-| [module_11]("module_11")                                                              | <span style="color: red;">Not ready</span>      |
-| [module_12]("module_12")                                                              | <span style="color: red;">Not ready</span>      |
-| [module_13]("module_13")                                                              | <span style="color: red;">Not ready</span>      |
-| [module_14]("module_14")                                                              | <span style="color: red;">Not ready</span>      |
-| [module_15]("module_15")                                                              | <span style="color: red;">Not ready</span>      |
-| [module_16]("module_16")                                                              | <span style="color: red;">Not ready</span>      |
-| [module_17]("module_17")                                                              | <span style="color: red;">Not ready</span>      |
-| [module_18]("module_18")                                                              | <span style="color: red;">Not ready</span>      |
-| [module_19]("module_19")                                                              | <span style="color: red;">Not ready</span>      |
-| [module_20]("module_20")                                                              | <span style="color: red;">Not ready</span>      |
-
+| module_10                                                                             | <span style="color: red;">Not ready</span>      |
+| module_11                                                                             | <span style="color: red;">Not ready</span>      |
+| module_12                                                                             | <span style="color: red;">Not ready</span>      |
+| module_13                                                                             | <span style="color: red;">Not ready</span>      |
+| module_14                                                                             | <span style="color: red;">Not ready</span>      |
+| module_15                                                                             | <span style="color: red;">Not ready</span>      |
+| module_16                                                                             | <span style="color: red;">Not ready</span>      |
+| module_17                                                                             | <span style="color: red;">Not ready</span>      |
+| module_18                                                                             | <span style="color: red;">Not ready</span>      |
+| module_19                                                                             | <span style="color: red;">Not ready</span>      |
+| module_20                                                                             | <span style="color: red;">Not ready</span>      |
