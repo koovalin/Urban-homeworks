@@ -1,5 +1,5 @@
 import multiprocessing
-import time
+from time import time
 
 
 def read_info(name):
@@ -17,24 +17,21 @@ filenames = [f'./file {number}.txt' for number in range(1, 5)]
 
 
 def linear_reading():
-    start_time = time.time()
+    start_time = time()
     for filename in filenames:
         read_info(filename)
-    duration = time.time() - start_time
+    duration = time() - start_time
     print(f"Линейный: {duration:.6f} секунд")
 
 
 def parallel_reading():
-    start_time = time.time()
+    start_time = time()
     with multiprocessing.Pool() as pool:
         pool.map(read_info, filenames)
-    duration = time.time() - start_time
+    duration = time() - start_time
     print(f"Многопроцессный: {duration:.6f} секунд")
 
 
 if __name__ == '__main__':
-    # Запуск линейного считывания
     linear_reading()
-    # Закомментируйте выше его для запуска отдельно или ниже
-    # Запуск многопроцессного считывания
-    # parallel_reading()
+    parallel_reading()
