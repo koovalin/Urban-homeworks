@@ -16,7 +16,7 @@
 | [module_8](https://github.com/koovalin/Urban-homeworks/tree/master/module_8 "module_8")    | <span style="color: green;">Ready</span>        |
 | [module_9](https://github.com/koovalin/Urban-homeworks/tree/master/module_9 "module_9")    | <span style="color: green;">Ready</span>        |
 | [module_10](https://github.com/koovalin/Urban-homeworks/tree/master/module_10 "module_10") | <span style="color: green;">Ready</span>        |
-| [module_11](https://github.com/koovalin/Urban-homeworks/tree/master/Module_11 "module_11") | <span style="color: orange;">In progress</span> |
+| [module_11](https://github.com/koovalin/Urban-homeworks/tree/master/module_11 "module_11") | <span style="color: orange;">In progress</span> |
 | module_12                                                                                  | <span style="color: red;">Not ready</span>      |
 | module_13                                                                                  | <span style="color: red;">Not ready</span>      |
 | module_14                                                                                  | <span style="color: red;">Not ready</span>      |
