@@ -1,4 +1,4 @@
-from aiogram import Bot, Dispatcher, executor
+from aiogram import Bot, Dispatcher, executor, types
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.dispatcher.filters.state import State, StatesGroup
 from aiogram.dispatcher import FSMContext
@@ -70,7 +70,14 @@ async def send_calories(message, state: FSMContext):
         await message.answer(f'Количество калорий вашего тела: {calories:.2f}')
     except ValueError:
         await message.answer("Ошибка ввода данных. Убедитесь, что вы вводите числа.")
+
     await state.finish()
+
+
+@dp.message_handler()
+async def all_messages(message: types.Message):
+    print('Введите команду /start, чтобы начать общение.')
+    await message.reply('Введите команду /start, чтобы начать общение.')
 
 
 if __name__ == "__main__":
