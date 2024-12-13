@@ -1,4 +1,4 @@
-from aiogram import Bot, Dispatcher, executor
+from aiogram import Bot, Dispatcher, executor, types
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.dispatcher.filters.state import State, StatesGroup
 from aiogram.dispatcher import FSMContext
@@ -8,12 +8,31 @@ API = '7757947891:AAHAK5FKxIL4mdW-SMN-cxEHefs78K0l2lk'
 bot = Bot(token=API)
 dp = Dispatcher(bot, storage=MemoryStorage())
 
-calculate_button = KeyboardButton(text='Рассчитать')
-kb = ReplyKeyboardMarkup(resize_keyboard=True).add(calculate_button)
+simple_calculate_button = KeyboardButton(text='Рассчитать')
+simple_buy_button = KeyboardButton(text='Купить')
+start_kb = ReplyKeyboardMarkup(resize_keyboard=True).add(simple_calculate_button, simple_buy_button)
 
 calories_button = InlineKeyboardButton(text='Рассчитать норму калорий', callback_data='calories')
 formulas_button = InlineKeyboardButton(text='Формулы расчёта', callback_data='formulas')
 main_menu_kb = InlineKeyboardMarkup().add(calories_button, formulas_button)
+
+product_1 = InlineKeyboardButton(text='Product1', callback_data='product_buying')
+product_2 = InlineKeyboardButton(text='Product2', callback_data='product_buying')
+product_3 = InlineKeyboardButton(text='Product3', callback_data='product_buying')
+product_4 = InlineKeyboardButton(text='Product4', callback_data='product_buying')
+back_to_catalog = InlineKeyboardButton(text='Back', callback_data='back_to_catalog')
+
+catalog_kb = InlineKeyboardMarkup(
+    inline_keyboard=[
+        [product_1, product_2],
+        [product_3, product_4]
+    ]
+)
+
+# product_buying_kb = InlineKeyboardMarkup(
+#     inline_keyboard=[
+#         [InlineKeyboardButton(text='Buy', url='https://www.ya.ru'), back_to_catalog]
+#     ])
 
 
 class UserState(StatesGroup):
@@ -24,7 +43,8 @@ class UserState(StatesGroup):
 
 @dp.message_handler(commands=['start'])
 async def start(message):
-    await message.answer('Привет. Это простой бот расчета калорий!', reply_markup=kb)
+    await message.answer(f'Привет {message.from_user.username}.\nЭто простой бот расчета калорий!',
+                         reply_markup=start_kb)
 
 
 @dp.message_handler(text='Рассчитать')
@@ -73,7 +93,28 @@ async def send_calories(message, state: FSMContext):
     await state.finish()
 
 
+@dp.message_handler(text='Купить')
+async def get_buying_list(message):
+    for i in range(1, 5):
+        with open(f'img/product_{i}.jpg', 'rb') as img:
+            await message.answer_photo(img, f'Название: Product{i} | Описание: описание {i} | Цена: {i * 100}')
+    await message.answer('Выберите продукт для покупки:', reply_markup=catalog_kb)
 
+
+@dp.callback_query_handler(text='back_to_catalog')
+async def back_to_catalog(call):
+    await call.message.answer('Выберите продукт для покупки.', reply_markup=catalog_kb)
+
+
+@dp.callback_query_handler(text='product_buying')
+async def send_confirm_message(call):
+    await call.message.answer('Вы успешно приобрели продукт!')
+
+
+@dp.message_handler()
+async def all_messages(message: types.Message):
+    print('Введите команду /start, чтобы начать общение.')
+    await message.reply('Введите команду /start, чтобы начать общение.')
 
 
 if __name__ == "__main__":
