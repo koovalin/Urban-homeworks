@@ -36,9 +36,7 @@ cursor.execute('SELECT SUM(balance) FROM Users')
 balance_sum = cursor.fetchone()[0]
 print(f'Total balance = {balance_sum}')
 
-cursor.execute('SELECT AVG(balance) FROM Users')
-average_balance = cursor.fetchone()[0]
-print(f'Average age = {average_balance:.2f}')
+print(f'Average age = {balance_sum/count_users:.2f}')
 
 connection.commit()
 connection.close()
