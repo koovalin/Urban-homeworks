@@ -5,11 +5,9 @@ from aiogram.dispatcher import FSMContext
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMarkup, InlineKeyboardButton
 import crud_functions
 
-
 API = '7757947891:AAHAK5FKxIL4mdW-SMN-cxEHefs78K0l2lk'
 bot = Bot(token=API)
 dp = Dispatcher(bot, storage=MemoryStorage())
-
 
 simple_calculate_button = KeyboardButton(text='Рассчитать')
 simple_buy_button = KeyboardButton(text='Купить')
@@ -37,6 +35,7 @@ catalog_kb = InlineKeyboardMarkup(
         [product_7, product_8]
     ]
 )
+
 
 # product_buying_kb = InlineKeyboardMarkup(
 #     inline_keyboard=[
