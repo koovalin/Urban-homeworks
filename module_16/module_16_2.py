@@ -1,23 +1,19 @@
 from fastapi import FastAPI, Path
 from typing import Annotated
 
-# Создаем объект приложения FastAPI
 app = FastAPI()
 
 
-# Маршрут для главной страницы
 @app.get("/")
 def read_root():
     return {"message": "Главная страница"}
 
 
-# Маршрут для страницы администратора
 @app.get("/user/admin")
 def read_admin():
     return {"message": "Вы вошли как администратор"}
 
 
-# Маршрут для страницы пользователя с ID
 @app.get("/user/{user_id}")
 def read_user_by_id(
     user_id: Annotated[
@@ -34,7 +30,6 @@ def read_user_by_id(
     return {"message": f"Вы вошли как пользователь № {user_id}"}
 
 
-# Маршрут для передачи username и age
 @app.get("/user/{username}/{age}")
 def read_user_info(
     username: Annotated[
