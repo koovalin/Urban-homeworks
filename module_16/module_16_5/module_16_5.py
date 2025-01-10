@@ -35,7 +35,7 @@ def get_users():
 def get_user(request: Request, user_id: int):
     for user in users:
         if user.id == user_id:
-            return templates.TemplateResponse("user.html", {"request": request, "user": user})
+            return templates.TemplateResponse("main.html", {"request": request, "user": user})
     raise HTTPException(status_code=404, detail="User was not found")
 
 
