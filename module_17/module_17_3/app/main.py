@@ -1,17 +1,19 @@
 from fastapi import FastAPI
 from backend.db import Base, engine
-from models import *
+from routers.user import router as user_router
 
+# Инициализация приложения
 app = FastAPI()
 
+# Подключение маршрутов
+app.include_router(user_router)
 
+
+# Главный маршрут
 @app.get("/")
 def root():
     return {"message": "Welcome to Taskmanager"}
 
 
+# Создание таблиц в БД
 Base.metadata.create_all(bind=engine)
-
-from sqlalchemy.schema import CreateTable
-print(CreateTable(User.__table__))
-print(CreateTable(Task.__table__))
